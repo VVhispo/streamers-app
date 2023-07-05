@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import formCSS from "./AddingForm.module.css" 
+import formCSS from "../styles/AddingForm.module.css" 
 import { Streamer } from '../interface'
 
 interface Props{

@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods","PUT,POST,GET,DELETE,OPTIONS,PATCH");
     next();
 });
 
@@ -53,8 +54,9 @@ app.post("/streamers", async(request, response) => {
 });
 
 //Receive a vote for a specific streamer and update their current upvote/downvote count. Operation means either downvote or upvote
-app.patch("/streamer/:id/vote/:operation", async(request, response) => {
-    const {id, operation} = request.params;
+app.patch("/streamer/:id/vote", async(request, response) => {
+    const {id} = request.params;
+    const operation = request.body.operation;
     console.log(`Incoming request PATCH /streamer/id/vote/operation with id ${id} and operation ${operation}`);
     if(operation !== "upvote" && operation !== "downvote") return response.status(400).json({message: `Operation ${operation} not recognized`});
     try{

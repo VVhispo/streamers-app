@@ -40,7 +40,14 @@ export const addStreamerFetch = async(data: Streamer): Promise<string> => {
 
 
 export const voteStreamer = async(id: string, operation: "upvote" | "downvote"): Promise<string> => {
-    const response = await fetch(`${IP}:${PORT}/streamer/${id}/vote/${operation}`);
+    const headers = {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({operation: operation})
+    }
+    const response = await fetch(`${IP}:${PORT}/streamer/${id}/vote`, headers);
     const result = response.json();
 
     if(response.status !== 200) return (await result).message;

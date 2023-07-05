@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import { Streamer } from '../interface';
 import { fetchStreamerByID } from '../api_controller';
-import streamerCSS from "./StreamerPage.module.css"
+import streamerCSS from "../styles/StreamerPage.module.css"
 
 export const StreamerPage: React.FC = () => {
     const [streamerData, setStreamerData] = useState<Streamer>();
@@ -15,11 +15,13 @@ export const StreamerPage: React.FC = () => {
             if(typeof result == 'string') setError(result);
             else setStreamerData(result);
         })();
+        document.title = "Streamer"
     }, [])
 
     useEffect(() => {
+        if(!streamerData) return
         document.body.style.background = `url("../../public/backgrounds/${streamerData?.platform.toLowerCase()}_background.png") no-repeat center center fixed`;
-        document.title = "Streamer " + streamerData!.name
+        document.title += " " + streamerData!.name
     }, [streamerData])
     
 

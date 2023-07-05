@@ -1,0 +1,35 @@
+.main{
+    width:175px;
+    height:210px;
+
+    margin:10px 15px;
+    position:relative;
+}
+.platformImage{
+    position:absolute;
+    right:15%;
+    top:45%;
+}
+.main > h3{
+  width:100%;
+  text-align: center;
+  height:20px;
+}
+.main > *{
+    margin: 10px 0px;
+}
+.voteContainer{
+    display:flex;
+    justify-content: space-around;
+    padding:0 15px;
+}
+.voteContainer *{
+    color:gray;
+}
+.voteContainer > img{
+    transition:0.1s;
+}
+.voteContainer > img:hover{
+    cursor: pointer;
+    filter: brightness(0.6);
+}

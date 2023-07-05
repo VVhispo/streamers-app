@@ -1,0 +1,46 @@
+.btnsContainer{
+    width:fit-content;
+    height:30px;
+
+    position:absolute;
+    left:50%;
+    transform:translate(-50%);
+    top: 15px;
+}
+.btn{
+    background: transparent;
+    border: none;
+    transition:0.2s ease;
+    margin: 0 25px;
+    width:30px;
+    height:30px;
+    background-size: 30px 30px;
+}
+.btn:hover{
+    transform: scale(1.3);
+    cursor:pointer;
+}
+.btn_active{
+    transform: scale(1.75);
+}
+.btn_new{
+    font-weight: bolder;
+    font-size:300%;
+}
+.btn_twitch{
+    background-image: url("../../public/logos/twitch_logo_small.png");
+}
+.btn_youtube{
+    width:40px;
+    background-size: 40px 30px;
+    background-image: url("../../public/logos/youtube_logo_small.png");
+}
+.btn_kick{
+    background-image: url("../../public/logos/kick_logo_small.png");
+}
+.btn_rumble{
+    background-image: url("../../public/logos/rumble_logo_small.png");
+}
+.btn_tiktok{
+    background-image: url("../../public/logos/tiktok_logo_small.png");
+}

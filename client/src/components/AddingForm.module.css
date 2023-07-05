@@ -1,0 +1,57 @@
+.main{
+    height:fit-content;
+
+    position:absolute;
+    left:50%;
+    transform:translate(-50%);
+    top: 15px;
+
+
+    display:flex;
+    align-items: center;
+}
+.input{
+    background-color:transparent;
+    outline:none;
+    border: none;
+    border-bottom: 1px solid gray;
+    height: 30px;
+    padding-left: 5px;
+    transition: 0.2s ease;
+    font-size:100%;
+}
+.input:focus{
+    border-bottom: 1px solid white;  
+}
+.input_name{
+    width:150px;
+}
+.input_description{
+    padding:0;
+    line-height: 1;
+    width:400px;
+    margin: 0 50px;
+    resize:none;
+    font-size:100%;
+    font-family: Tahoma, sans-serif;
+    padding-top: 5px;
+}
+.btn{
+    background-color: transparent;
+    padding:10px;
+    font-size:120%;
+    border:none;
+    transition:0.2s ease;
+}
+.btn:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.btn_add{
+    color:rgb(0, 168, 0);
+    text-shadow: 0px 0px 20px rgb(0, 168, 0);
+}
+.btn_cancel{
+    color:rgb(207, 23, 23);
+    text-shadow: 0px 0px 30px rgb(207, 23, 23);
+}

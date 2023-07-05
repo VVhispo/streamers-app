@@ -4,6 +4,7 @@ import { fetchAllStreamers } from '../api_controller';
 import homeCSS from "./Home.module.css"
 import { ButtonList } from '../components/ButtonList';
 import { AddingForm } from '../components/AddingForm';
+import { addStreamerFetch } from '../api_controller';
 
 export const Home: React.FC = () => {
     const [streamers, setStreamers] = useState<Streamer[]>();
@@ -11,6 +12,7 @@ export const Home: React.FC = () => {
     const [addingNew, setAddingNew] = useState<Boolean>(false);
 
     useEffect(() => {
+        if(addingNew) return
         (async() =>{
             const result = await fetchAllStreamers();
             if(typeof result == 'string') setError(result);
@@ -18,7 +20,7 @@ export const Home: React.FC = () => {
         })();
 
         document.title = "Streamers"
-    }, [])
+    }, [addingNew])
 
     const switchActive = (platform: string) => {
         if(platform == "New"){
@@ -27,12 +29,21 @@ export const Home: React.FC = () => {
         }
     }
 
-    return(<div className={homeCSS.main}>
+    const addStreamer = async(data: Streamer) => {
+        const result = await addStreamerFetch(data);
+        if(result !== "success") setError(result);
+        setAddingNew(false)
+    }
+
+    return(<div className={homeCSS.main} style={{width: (addingNew) ? "50%" : "90%", transition:"0.2s"}}>
         {
             (!addingNew) ? 
-            <ButtonList onClickFunction={switchActive}/>
+            <> 
+                <ButtonList onClickFunction={switchActive}/>
+            </>
+            
             :
-            <AddingForm onCancel={setAddingNew}/>
+            <AddingForm onCancel={setAddingNew} onAdd={addStreamer}/>
         }
     </div>)
 }

@@ -1,14 +1,15 @@
 .main{
+    min-width: 600px;
     height:fit-content;
 
-    position:absolute;
-    left:50%;
-    transform:translate(-50%);
-    top: 15px;
-
-
     display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    margin: 0 auto;
+}
+.main > h2{
+    margin-bottom: 50px;
 }
 .input{
     background-color:transparent;
@@ -20,25 +21,28 @@
     transition: 0.2s ease;
     font-size:100%;
 }
+.input_name{
+    width:160px;
+}
 .input:focus{
     border-bottom: 1px solid white;  
 }
-.input_name{
-    width:150px;
-}
 .input_description{
     padding:0;
-    line-height: 1;
-    width:400px;
+    padding-left:5px;
+    height:auto;
     margin: 0 50px;
     resize:none;
     font-size:100%;
     font-family: Tahoma, sans-serif;
     padding-top: 5px;
+    width:60%;
+    margin-bottom: 50px;
 }
 .btn{
     background-color: transparent;
-    padding:10px;
+    padding:5px;
+    width:100px;
     font-size:120%;
     border:none;
     transition:0.2s ease;
@@ -49,9 +53,53 @@
 }
 .btn_add{
     color:rgb(0, 168, 0);
+    border:1px solid rgb(0, 168, 0);
     text-shadow: 0px 0px 20px rgb(0, 168, 0);
 }
 .btn_cancel{
     color:rgb(207, 23, 23);
+    border: 1px solid rgb(207, 23, 23);
     text-shadow: 0px 0px 30px rgb(207, 23, 23);
+}
+.headerInputs{
+    width:60%;
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom:50px;
+}
+.selectValueIcon{
+    width:50px;
+    height:50px;
+    background-size: 50px 50px;
+}
+.headerInputs > *{
+    width:50%;
+}
+.selectContainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.selectInput{
+    margin: 0 20px;
+    height:30px;
+    background-color:transparent;
+    outline:none;
+    border:none;
+    border-bottom: 1px solid gray;
+}
+.selectOption{
+    background-color:rgba(0, 0, 0, 0.856) !important;
+}
+.buttons{
+    width:70%;
+    display:flex;
+    justify-content: space-around;
+}
+.input_error{
+    border-bottom:1px solid red;
+}
+p{
+    margin: 10px 0
 }

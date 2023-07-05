@@ -1,7 +1,7 @@
 export interface Streamer{
-    id: string,
+    id?: string,
     name: string, 
-    platform: "Twitch" | "YouTube" | "Kick" | "TikTok" | "Rumble",
+    platform: string,
     description: string,
     votes: number
 }

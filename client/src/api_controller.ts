@@ -22,7 +22,7 @@ export const fetchAllStreamers = async(): Promise<Streamer[] | string> => {
     return (await result) as Streamer[];
 }
 
-export const addStreamer = async(data: Streamer): Promise<string> => {
+export const addStreamerFetch = async(data: Streamer): Promise<string> => {
     const headers = {
         method: "POST",
         headers: {

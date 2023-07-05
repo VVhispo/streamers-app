@@ -7,6 +7,13 @@ const db = require("./database_controller");
 
 app.use(bodyParser.json());
 
+//to workaround CORS errors
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 //Return all the stored streamer submissions in response to a request from the frontend.
 app.get("/streamers", async(request, response) => {
     console.log("Incoming request GET /streamers")
@@ -28,7 +35,7 @@ app.get("/streamer/:id", async(request, response) => {
         response.status(200).json(streamer);
     }catch(err){
         console.error("GET /streamer/id error: \n" + err.message);
-        response.status(500).json({message: err.message});
+        response.status(404).json({message: err.message});
     }
 });
 

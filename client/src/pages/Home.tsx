@@ -25,7 +25,7 @@ export const Home: React.FC = () => {
                 setStreamersFiltered(result)
             }
         })();
-
+        setFilter("");
         document.title = "Streamers"
     }, [addingNew])
 

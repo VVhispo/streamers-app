@@ -17,7 +17,6 @@ app.use(function(req, res, next) {
 
 //Return all the stored streamer submissions in response to a request from the frontend.
 app.get("/streamers", async(request, response) => {
-    console.log("Incoming request GET /streamers")
     try{
         const streamers = await db.getAll();
         response.status(200).json(streamers);
@@ -29,7 +28,6 @@ app.get("/streamers", async(request, response) => {
 
 //Return data about a specific streamer
 app.get("/streamer/:id", async(request, response) => {
-    console.log("Incoming request GET /streamer/id with id " + request.params.id);
     try{
         const streamer = await db.getById(request.params.id);
         if(!streamer) return response.status(404).json({message: `Streamer with id ${request.params.id} not found`});

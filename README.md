@@ -2,23 +2,27 @@ Simple app consisting of 2 pages:
 1. List of streamers (from database) with filtering options and form to add a new streamer to the database;
 2. Dynamic url page for every streamer with basic info.
 
-***Tech stack***:
+<h2>Tech stack</h2>
 
-Backend:                      Frontend:
-Node.js                       React with TypeScript including react-router
-Express 4.18.2                Built with Vite
+***Backend***:              
+Node.js                   
+Express 4.18.2              
 Mongoose 7.3.1
 Body Parser 1.20.2
 
+***Frontend***: <br>
+React with TypeScript including react-router<br>
+Built with Vite
 
-***Installation:***
-Starting from root directory / : 
-cd server
-npm i
-npm run start
---Open new command line in the same, root directory--
-cd client
-npm i
-npm run dev
+<h2>Installation:</h2>
+
+***Starting from root directory / :***</br>
+cd server </br>
+npm i </br>
+npm run start </br>
+***Open new command line in the same, root directory*** </br>
+cd client </br>
+npm i </br> 
+npm run dev </br>
 
 Open localhost:3000 and everything should work, server runs on port 5000

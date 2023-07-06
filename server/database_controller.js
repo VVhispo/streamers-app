@@ -4,7 +4,7 @@ const Streamer = require("./models/streamer");
 
 module.exports = {
     init: () => {
-        mongoose.connect('mongodb://localhost/streamers');
+        mongoose.connect('mongodb://127.0.0.1/streamers');
         const db = mongoose.connection;
         db.on('error', (error) => console.error("Database error: \n" + error));
         db.once('open', () => console.log("Connected to database"));

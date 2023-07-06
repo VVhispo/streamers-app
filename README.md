@@ -7,7 +7,7 @@ Simple app consisting of 2 pages:
 ***Backend***:              
 Node.js                   
 Express 4.18.2              
-Mongoose 7.3.1
+Mongo.db - Mongoose 7.3.1 <br>
 Body Parser 1.20.2
 
 ***Frontend***: <br>
